@@ -1,0 +1,1 @@
+seit 14.Juni mache ich ein praktikum jedes freitag  um meine erworbenen Kenntnisse direkt in die Praxis umzusetzen.

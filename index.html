@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="Css/style.css">
+    <title>Budget</title>
+</head>
+<body>
+    <section class="intro">
+        <p id="date"></p>
+        <h1 id="amount">00.00 €</h1>
+        <div class="incomeAmount">INCOME<span id="income">+ 0.00</span></div>
+        <div class="expensesAmount">EXPENSES<span id="expenses">- 0.00</span></div>
+    </section>
+    <section class="content">
+        <form id="form" autocomplete="off">
+            <select id="select">
+                <option>Income</option>
+                <option>Expenses</option>
+            </select>
+            <div>
+                <input type="text" id='description'>
+                <label class="labelDesc">Add description</label>
+            </div>
+            <div>
+                <input type="number" min="0" id="value">
+                <label class="labelValue">Value</label>
+            </div>
+            <i id='check' class="far fa-check-circle"></i>
+        </form>
+            <ul id='incomeList'>
+                <li>INCOME</li>
+            </ul>
+            <ul id="expensesList">
+                <li>EXPENSES</li>
+            </ul>
+        </aside>
+    </section>
+    <script src="Js/main.js"></script>
+</body>
+</html>

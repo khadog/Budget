@@ -1,0 +1,225 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.intro {
+  background: url("../Img/bg.jpg") no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  font-size: 25px;
+  letter-spacing: 2px;
+  padding: 5%;
+}
+.intro p {
+  margin-top: 0;
+  padding-top: 50px;
+}
+.intro div {
+  width: 40%;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 15px auto;
+  padding: 12px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.intro div span {
+  text-align: end;
+}
+.intro div.incomeAmount {
+  background-color: #3ebb53;
+}
+.intro div.expensesAmount {
+  background-color: #d24646;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.content form {
+  width: 100%;
+  padding: 2% 5%;
+  background-color: rgba(224, 220, 220, 0.699);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.content form div {
+  position: relative;
+}
+.content form div input {
+  width: 93%;
+  min-width: 200px;
+}
+.content form div input:focus + label {
+  top: -12px;
+  left: 10px;
+  transform: scale(0.9);
+}
+.content form div label {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  color: #555;
+  transition: all 0.5s;
+}
+.content form select {
+  cursor: pointer;
+}
+.content form input,
+.content form select {
+  padding: 10px;
+  margin: 10px;
+  font-size: 18px;
+  background-color: #fff;
+  border: none;
+}
+.content form input#value,
+.content form select#value {
+  width: 100px;
+  min-width: 100px;
+}
+.content form input:focus,
+.content form select:focus {
+  outline: none;
+}
+.content form i {
+  font-size: 35px;
+  color: #3ebb53;
+  cursor: pointer;
+}
+.content ul {
+  width: 50%;
+  color: #3ebb53;
+  padding: 15px;
+  list-style: none;
+}
+.content ul#expensesList {
+  color: #d24646;
+}
+.content ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(224, 220, 220, 0.699);
+  margin: 8px auto;
+  max-width: 400px;
+  position: relative;
+}
+.content ul li:first-child {
+  font-size: 22px;
+  padding-bottom: 25px;
+}
+.content ul li .incomeListValue,
+.content ul li .expensesListValue {
+  transition: all 0.4s;
+}
+.content ul li:hover button {
+  opacity: 1;
+}
+.content ul li:hover .incomeListValue,
+.content ul li:hover .expensesListValue {
+  margin-right: 40px;
+}
+.content ul li button {
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  opacity: 0;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.content ul li button.incomeListButton {
+  color: #3ebb53;
+  border: 1px solid #3ebb53;
+}
+.content ul li button.expensesListButton {
+  color: #d24646;
+  border: 1px solid #d24646;
+}
+
+@media (max-width: 700px) {
+  .intro {
+    font-size: 18px;
+  }
+  .intro h1 {
+    font-size: 22px;
+  }
+  .intro div {
+    font-size: 12px;
+    min-width: 90%;
+  }
+
+  .content form div {
+    width: 90%;
+    font-size: 14px;
+    left: -4px;
+  }
+  .content form div input {
+    width: 100%;
+    min-width: unset;
+  }
+  .content form div input:focus + label {
+    top: -5px;
+    left: 5px;
+  }
+  .content form div label {
+    position: absolute;
+    top: 23px;
+    left: 13px;
+    color: #555;
+    transition: all 0.5s;
+  }
+  .content form input,
+.content form select {
+    width: 90%;
+    margin: 14px 4px;
+    padding: 8px;
+    font-size: 14px;
+  }
+  .content form input#value,
+.content form select#value {
+    width: 100%;
+  }
+  .content form i {
+    font-size: 35px;
+    width: 100%;
+    text-align: center;
+  }
+  .content ul {
+    width: 100%;
+    padding: 5%;
+  }
+  .content ul li {
+    margin: 4px;
+  }
+  .content ul li p {
+    margin: 8px;
+  }
+  .content ul li:first-child {
+    font-size: 16px;
+    padding-bottom: 20px;
+  }
+  .content ul li .incomeListValue,
+.content ul li .expensesListValue {
+    margin-right: 40px;
+  }
+  .content ul li button {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

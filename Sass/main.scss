@@ -1,0 +1,225 @@
+$white-color: #fff;
+$gray-color: rgba(224, 220, 220, 0.699);
+$income-color: #3ebb53;
+$expenses-color: #d24646;
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+.intro {
+	background: url('../Img/bg.jpg') no-repeat;
+	background-size: cover;
+	text-align: center;
+	color: $white-color;
+	font-size: 25px;
+	letter-spacing: 2px;
+	padding: 5%;
+	p {
+		margin-top: 0;
+		padding-top: 50px;
+	}
+	div {
+		width: 40%;
+		max-width: 500px;
+		min-width: 300px;
+		margin: 15px auto;
+		padding: 12px;
+		font-size: 16px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		span {
+			text-align: end;
+		}
+		&.incomeAmount {
+			background-color: $income-color;
+		}
+		&.expensesAmount {
+			background-color: $expenses-color;
+		}
+	}
+}
+.content {
+	display: flex;
+	flex-wrap: wrap;
+	form {
+		width: 100%;
+		padding: 2% 5%;
+		background-color: $gray-color;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		div {
+			position: relative;
+			input {
+				width: 93%;
+				min-width: 200px;
+				&:focus + label {
+					top: -12px;
+					left: 10px;
+					transform: scale(.9);
+				}
+			}
+			label {
+				position: absolute;
+				top: 22px;
+				left: 20px;
+				color: #555;
+				transition: all .5s;
+			}
+		}
+		select {
+			cursor: pointer;
+		}
+		input,
+		select {
+			padding: 10px;
+			margin: 10px;
+			font-size: 18px;
+			background-color: $white-color;
+			border: none;
+			&#value {
+				width: 100px;
+				min-width: 100px;
+			}
+			&:focus {
+				outline: none;
+			}
+		}
+		i {
+			font-size: 35px;
+			color: $income-color;
+			cursor: pointer;
+		}
+	}
+	ul {
+		width: 50%;
+		color: $income-color;
+		padding: 15px;
+		list-style: none;
+		&#expensesList {
+			color: $expenses-color;
+		}
+		li {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border-bottom: 1px solid $gray-color;
+			margin: 8px auto;
+			max-width: 400px;
+			position: relative;
+			&:first-child {
+				font-size: 22px;
+				padding-bottom: 25px;
+			}
+			.incomeListValue,
+			.expensesListValue {
+				transition: all .4s;
+			}
+			&:hover {
+				button {
+					opacity: 1;
+				}
+				.incomeListValue,
+				.expensesListValue {
+					margin-right: 40px;
+				}
+			}
+			button {
+				position: absolute;
+				right: 0;
+				background-color: transparent;
+				border-radius: 50%;
+				width: 25px;
+				height: 25px;
+				opacity: 0;
+				transition: all .5s;
+				cursor: pointer;
+				&.incomeListButton {
+					color: $income-color;
+					border: 1px solid $income-color;
+				}
+				&.expensesListButton {
+					color: $expenses-color;
+					border: 1px solid $expenses-color;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 700px) {
+	.intro {
+		font-size: 18px;
+		h1 {
+			font-size: 22px;
+		}
+		div {
+			font-size: 12px;
+			min-width: 90%;
+		}
+	}
+	.content {
+		form {
+			div {
+				width: 90%;
+				font-size: 14px;
+				left: -4px;
+				input {
+					width: 100%;
+					min-width: unset;
+					&:focus + label {
+						top: -5px;
+						left: 5px;
+					}
+				}
+				label {
+					position: absolute;
+					top: 23px;
+					left: 13px;
+					color: #555;
+					transition: all .5s;
+				}
+			}
+			input,
+			select {
+				width: 90%;
+				margin: 14px 4px;
+				padding: 8px;
+				font-size: 14px;
+				&#value {
+					width: 100%;
+				}
+			}
+			i {
+				font-size: 35px;
+				width: 100%;
+				text-align: center;
+			}
+		}
+		ul {
+			width: 100%;
+			padding: 5%;
+			li {
+				margin: 4px;
+				p {
+					margin: 8px;
+				}
+				&:first-child {
+					font-size: 16px;
+					padding-bottom: 20px;
+				}
+				.incomeListValue,
+				.expensesListValue {
+					margin-right: 40px;
+				}
+				button {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

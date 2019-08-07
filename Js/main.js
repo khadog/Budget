@@ -25,8 +25,8 @@ function getDate() {
 	document.getElementById('date').innerHTML = `Available Budget in ${months[month]} ${year}`;
 }
 window.addEventListener('load', getDate);
-// --------------
 
+// this function is to style the form
 function formStyle() {
 	const labelDesc = document.querySelector('.labelDesc');
 	const labelValue = document.querySelector('.labelValue');
@@ -69,21 +69,23 @@ function addAmountToList() {
 	formStyle();
 }
 document.getElementById('check').addEventListener('click', addAmountToList);
-//----------------------
 
+// this function is to display the all items as incomeList or ExpensesList
 function displayItem() {
 	const incomeList = document.getElementById('incomeList');
 	const expensesList = document.getElementById('expensesList');
+
 	incomeList.innerHTML = '<li>INCOME</li>';
 	expensesList.innerHTML = '<li>EXPENSES</li>';
 
 	if (data.length === 0) {
 		updateAmount();
 	}
+
 	data.map((item) => {
 		if (item.state === 'Income' && item.desc !== '' && isNaN(item.desc) && item.value !== '' && item.value > 0) {
 			incomeList.innerHTML += `
-			<li class='itemList' id='${item.id}'><p class='incomeListDesc'>${item.desc}</p><p class="incomeListValue">${item.value}</p><button class='incomeListButton' onclick="removeItem(event)">X</button></li>
+			<li class='itemList' id='${item.id}'><p class='incomeListDesc'>${item.desc}</p><p class="incomeListValue">${item.value}</p><i class="far fa-trash-alt incomeListButton" onclick="removeItem(event)"></i></li>
 			`;
 		} else if (
 			item.state === 'Expenses' &&
@@ -94,13 +96,14 @@ function displayItem() {
 		) {
 			expensesList.innerHTML += `
 			<li class='itemList' id='${item.id}'><p class="expensesListDesc">${item.desc}</p><p class="expensesListValue">${item.value *
-				-1}</p><button class='expensesListButton' onclick="removeItem(event)">X</button></li>
+				-1}</p><i onclick="removeItem(event)" class="far fa-trash-alt expensesListButton"></i></li>
 			`;
 		}
 		updateAmount();
 	});
 }
 
+// this function is to update the total Amount, income Amount and expenses Amount
 function updateAmount() {
 	const amount = document.getElementById('amount');
 	const income = document.getElementById('income');
@@ -108,6 +111,7 @@ function updateAmount() {
 
 	const incomeListValue = document.querySelectorAll('.incomeListValue');
 	const expensesListValue = document.querySelectorAll('.expensesListValue');
+
 	let incomeAmount = 0;
 	let expensesAmount = 0;
 
@@ -121,8 +125,8 @@ function updateAmount() {
 	expenses.innerHTML = expensesAmount.toFixed(2);
 	amount.innerHTML = (incomeAmount + expensesAmount).toFixed(2) + ' €';
 }
-//----------------------
 
+// this function is to remove item from the list
 function removeItem(event) {
 	let index = data.findIndex((item) => item.id === event.target.parentElement.id);
 

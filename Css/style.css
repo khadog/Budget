@@ -66,6 +66,11 @@ body {
   left: 10px;
   transform: scale(0.9);
 }
+.content form div input:hover + label {
+  top: -12px;
+  left: 10px;
+  transform: scale(0.9);
+}
 .content form div label {
   position: absolute;
   top: 22px;
@@ -94,8 +99,8 @@ body {
   outline: none;
 }
 .content form i {
-  font-size: 35px;
-  color: #3ebb53;
+  font-size: 25px;
+  color: #03a9f4;
   cursor: pointer;
 }
 .content ul {
@@ -114,6 +119,7 @@ body {
   border-bottom: 1px solid rgba(224, 220, 220, 0.699);
   margin: 8px auto;
   max-width: 400px;
+  font-size: 18px;
   position: relative;
 }
 .content ul li:first-child {
@@ -124,31 +130,26 @@ body {
 .content ul li .expensesListValue {
   transition: all 0.4s;
 }
-.content ul li:hover button {
+.content ul li:hover i {
   opacity: 1;
 }
 .content ul li:hover .incomeListValue,
 .content ul li:hover .expensesListValue {
   margin-right: 40px;
 }
-.content ul li button {
+.content ul li i {
   position: absolute;
   right: 0;
-  background-color: transparent;
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
   opacity: 0;
+  font-size: 20px;
   transition: all 0.5s;
   cursor: pointer;
 }
-.content ul li button.incomeListButton {
+.content ul li i.incomeListButton {
   color: #3ebb53;
-  border: 1px solid #3ebb53;
 }
-.content ul li button.expensesListButton {
+.content ul li i.expensesListButton {
   color: #d24646;
-  border: 1px solid #d24646;
 }
 
 @media (max-width: 700px) {
@@ -217,7 +218,7 @@ body {
 .content ul li .expensesListValue {
     margin-right: 40px;
   }
-  .content ul li button {
+  .content ul li i {
     opacity: 1;
   }
 }
